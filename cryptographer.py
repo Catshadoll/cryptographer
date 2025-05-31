@@ -1,11 +1,7 @@
 ALPHABET_RU = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 ALPHABET_EN = "abcdefghijklmnopqrstuvwxyz"
 
-message = input("Введите сообщение: ").lower()
-step = int(input("Введите шаг сдвига: "))
-result = ""
-
-language = input("Выберите язык - RU/EN: ")
+language = input("Выберите язык - RU/EN: ").upper()
 if language == "RU":
     alphabet = ALPHABET_RU
 elif language == "EN":
@@ -13,6 +9,10 @@ elif language == "EN":
 else:
     print("Ошибка: язык должен быть RU или EN")
     exit()
+
+message = input("Введите сообщение: ").lower()
+step = int(input("Введите шаг сдвига: "))
+result = ""
 
 chipher = [alphabet.find(symbol) + step for symbol in message]
 print(chipher)
